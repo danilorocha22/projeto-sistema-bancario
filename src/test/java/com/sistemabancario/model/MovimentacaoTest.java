@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * 
  * @author Manoel Campos da Silva Filho
  */
+@SuppressWarnings("all")
 class MovimentacaoTest {
     /**
      * Verifica se o valor passado para o ID está sendo realmente armazenado.

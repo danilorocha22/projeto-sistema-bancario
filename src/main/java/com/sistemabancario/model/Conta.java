@@ -1,6 +1,8 @@
 package com.sistemabancario.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Representa uma conta bancária de um determinado {@link Cliente}, tendo os
@@ -10,8 +12,9 @@ import java.util.List;
  * <li>Uma conta não pode ser excluída se existirem movimentações.</li>
  * </ul>
  *
- * @author Manoel Campos da Silva Filho
+ * @author Danilo Rocha
  */
+@SuppressWarnings("all")
 public class Conta implements Cadastro {
 
     private long id;
@@ -60,7 +63,7 @@ public class Conta implements Cadastro {
      * conta usando qualquer um dos construtores, a lista de movimentações não é
      * nula, chamando o método {@link #getMovimentacoes()}. (R04)
      */
-    private List<Movimentacao> movimentacoes;
+    private List<Movimentacao> movimentacoes = new ArrayList<>();
 
     public Conta() {
         // TODO: Você precisa implementar este método
@@ -164,6 +167,13 @@ public class Conta implements Cadastro {
     }
 
     public void setNumero(String numero) {
+        Objects.requireNonNull(numero, "Número não" +
+                "pode ser nulo, deve está no formato: 99999-9");
+
+        if(!numero.matches("\\d{5}-\\d")) {
+            throw new IllegalArgumentException("Número inválido!" +
+                    "Deve está no formato: 99999-9");
+        }
         this.numero = numero;
     }
 
@@ -192,6 +202,9 @@ public class Conta implements Cadastro {
     }
 
     public void setLimite(double limite) {
+        if (!especial && limite > 0) {
+            throw new IllegalStateException("Somente contas especiais podem ter limite!");
+        }
         this.limite = limite;
     }
 }

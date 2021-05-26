@@ -2,8 +2,9 @@ package com.sistemabancario.model;
 
 /**
  * Classe com funções de uso geral.
- * @author Manoel Campos da Silva Filho
+ * @author Danilo Rocha
  */
+@SuppressWarnings("all")
 public final class Util {
     /**
      * Construtor privado para evitar que a classe seja instanciada,

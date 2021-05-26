@@ -13,8 +13,9 @@ import java.util.Objects;
  * (principalmente depois de alguns anos).
  * </p>
  * 
- * @author Manoel Campos da Silva Filho
+ * @author Danilo Rocha
  */
+@SuppressWarnings("all")
 public class Movimentacao implements Cadastro {
     private long id;
 
