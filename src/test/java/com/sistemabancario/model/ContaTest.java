@@ -1,6 +1,9 @@
 package com.sistemabancario.model;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("all")
@@ -68,5 +71,71 @@ public class ContaTest {
         assertNotNull(instance.getMovimentacoes());
     }
 
+    @Test
+    void getSaldoTotal() {
+        final double limite = 500;
+        final double esperado = limite;
+        final Conta instance = new Conta();
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        final double obtido = instance.getSaldoTotal();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void depositoDinheiro() {
+        final double limite = 500.6, deposito = 500.8, esperado = 1001.4;
+        final Conta instance = new Conta();
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        instance.depositoDinheiro(deposito);
+        final double obtido = instance.getSaldoTotal();
+        assertEquals(esperado, obtido, 0.001);
+    }
+
+    @Test
+    void depositoDinheiroTipoMovimentacao() {
+        final double limite = 500, deposito = 500;
+        final char esperado = 'C';
+        final Conta instance = new Conta();
+        final Movimentacao movimentacao = new Movimentacao(instance);
+        movimentacao.setTipo('C');
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        instance.depositoDinheiro(deposito);
+        final char obtido = movimentacao.getTipo();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void depositoDinheiroMovimentacaoConfirmada() {
+        final double limite = 500, deposito = 500;
+        final boolean esperado = true;
+        final Conta instance = new Conta();
+        final Movimentacao movimentacao = new Movimentacao(instance);
+        movimentacao.setTipo('C');
+        movimentacao.setConfirmada(true);
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        instance.depositoDinheiro(deposito);
+        final boolean obtido = movimentacao.isConfirmada();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void depositoDinheiroValorAtribuido() {
+        final double limite = 500, deposito = 500;
+        final double esperado = limite + deposito;
+        final Conta instance = new Conta();
+        final Movimentacao movimentacao = new Movimentacao(instance);
+        movimentacao.setTipo('C');
+        movimentacao.setConfirmada(true);
+        movimentacao.setValor(esperado);
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        instance.depositoDinheiro(deposito);
+        final double obtido = movimentacao.getValor();
+        assertEquals(esperado, obtido);
+    }
 
 }
