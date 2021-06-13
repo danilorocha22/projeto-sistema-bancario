@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Movimentacao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-bancario</a> &gt; <a href="index.source.html" class="el_package">com.sistemabancario.model</a> &gt; <span class="el_source">Movimentacao.java</span></div><h1>Movimentacao.java</h1><pre class="source lang-java linenums">package com.sistemabancario.model;
+
+import java.util.Objects;
+
+/**
+ * Representa uma movimentação em uma {@link Conta} bancária, que pode indicar entrada ou saída.
+ *
+ * &lt;p&gt;
+ * &lt;b&gt;NOTA&lt;/b&gt;: Mesmo sendo possível obter o saldo somando-se todas as movimentações,
+ * à medida que os dados no sistema aumentarem ao longo do tempo, 
+ * calcular o saldo pode se tornar uma operação extremamente lenta.
+ * Isto normalmente ocorrer quando o histórico de movimentações se torna longo
+ * (principalmente depois de alguns anos).
+ * &lt;/p&gt;
+ * 
+ * @author Danilo Rocha
+ */
+@SuppressWarnings(&quot;all&quot;)
+public class Movimentacao implements Cadastro {
+    private long id;
+
+    /**
+     * Descrição não pode ser nula, vazia nem conter apenas espaços em branco (R00).
+     */
+    private String descricao;
+
+    /**
+     * Conta bancária a qual a movimentação está vinculada.
+     */
+    private Conta conta;
+
+    /**
+     * Tipo da movimentação deve ser 'C' para crédito (entrada de dinheiro)
+     * ou 'D' para débito (saída de dinheiro) (R01).
+     */
+    private char tipo;
+
+    /**
+     * Valor monetário da movimentação.
+     * O valor não deve ser negativo, uma vez que existe o atributo {@link #tipo} (R02).
+     * Se o tipo for débito, o valor da movimentação não pode ser superior ao saldo total da {@link Conta} (R03).
+     */
+    private double valor;
+
+    /**
+     * Indica se a movimentação foi confirmada, neste caso, devendo ser registrada no saldo da
+     * conta, quando for adicionada à lista de movimentações usando
+     * {@link Conta#addMovimentacao(Movimentacao)}.
+     *
+     * &lt;ul&gt;
+     *  &lt;li&gt;Movimentacoes devem ser instanciadas como &quot;confirmadas&quot; por padrão (R04).&lt;/li&gt;
+     *  &lt;li&gt;
+     *      Somente operações como depósito em cheque devem ser
+     *      registradas inicialmente como não confirmadas. Após uma operação ser
+     *      confirmada, deve-se atualizar o saldo da conta (R99).
+     *  &lt;li&gt;
+     * &lt;/ul&gt;
+     *
+     * @see Conta#depositoDinheiro(double)
+     * @see Conta#depositoCheque(double)
+     */
+    private boolean confirmada;
+
+    /**
+     * Instancia uma movimentação para uma determinada {@link Conta} bancária,
+     * onde a conta passada deve ser armazenada no atributo {@link #conta} (R05).
+     * @param conta a {@link Conta} para vincular a movimentação.
+     */
+<span class="fc" id="L69">    public Movimentacao(Conta conta){</span>
+        // TODO: Você precisa implementar este método
+<span class="fc" id="L71">    }</span>
+
+    @Override
+    public long getId() {
+<span class="fc" id="L75">        return id;</span>
+    }
+
+    @Override
+    public void setId(long id) {
+<span class="fc" id="L80">        this.id = id;</span>
+<span class="fc" id="L81">    }</span>
+
+    public char getTipo(){
+<span class="fc" id="L84">        return tipo;</span>
+    }
+
+    public void setTipo(char tipo){
+<span class="fc" id="L88">        this.tipo = tipo;</span>
+<span class="fc" id="L89">    }</span>
+
+    public String getDescricao() {
+<span class="nc" id="L92">        return descricao;</span>
+    }
+
+    public void setDescricao(String descricao) {
+<span class="fc" id="L96">        Objects.requireNonNull(descricao, &quot;Descrição não pode ser nula.&quot;);</span>
+
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">        if(descricao.trim().isEmpty()){</span>
+<span class="fc" id="L99">            throw new IllegalArgumentException(&quot;Descrição não pode ser vazia.&quot;);</span>
+        }
+<span class="nc" id="L101">        this.descricao = descricao;</span>
+<span class="nc" id="L102">    }</span>
+
+    public double getValor() {
+<span class="fc" id="L105">        return valor;</span>
+    }
+
+    public void setValor(double valor) {
+<span class="fc" id="L109">        this.valor = valor;</span>
+<span class="fc" id="L110">    }</span>
+
+    public boolean isConfirmada() {
+<span class="fc" id="L113">        return confirmada;</span>
+    }
+
+    public void setConfirmada(boolean confirmada) {
+<span class="fc" id="L117">        this.confirmada = confirmada;</span>
+<span class="fc" id="L118">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a6aea60-9913-4a93-8ea4-50a51ecd1ca5" name="Default Changelist" comment="Adiciona testes de exemplo para a classe Movimentacao.">
       <change beforePath="$PROJECT_DIR$/sistema-bancario.iws" beforeDir="false" afterPath="$PROJECT_DIR$/sistema-bancario.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sistemabancario/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sistemabancario/model/Conta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/sistemabancario/model/ContaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sistemabancario/model/ContaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContaTest.depositoDinheiroValorAtribuido">
+  <component name="RunManager" selected="JUnit.All in sistema-bancario">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -89,6 +87,14 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in sistema-bancario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistema-bancario" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,22 +146,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaTest.depsitoDinheiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistema-bancario" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sistemabancario.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
-      <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
-      <option name="METHOD_NAME" value="depsitoDinheiro" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ContaTest.depsitoDinheiroTipoMovimentacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistema-bancario" />
       <extension name="coverage">
@@ -174,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in sistema-bancario" />
         <item itemvalue="JUnit.ContaTest.depositoDinheiroValorAtribuido" />
         <item itemvalue="JUnit.ContaTest" />
         <item itemvalue="JUnit.ContaTest.depositoDinheiroMovimentacaoConfirmada" />
         <item itemvalue="JUnit.ContaTest.depsitoDinheiroTipoMovimentacao" />
-        <item itemvalue="JUnit.ContaTest.depsitoDinheiro" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +191,7 @@
       <workItem from="1622060593022" duration="150000" />
       <workItem from="1622061224775" duration="7040000" />
       <workItem from="1622145789777" duration="396000" />
-      <workItem from="1623612020879" duration="5853000" />
+      <workItem from="1623612020879" duration="7009000" />
     </task>
     <task id="LOCAL-00001" summary="Adiciona testes de exemplo para a classe Movimentacao.">
       <created>1598458565400</created>
@@ -239,5 +229,8 @@
     <MESSAGE value="Calcula dígito de agência usando módulo 11,&#10;pois este é o padrão de bancos como o Banco do Brasil.&#10;Atualiza documentação" />
     <MESSAGE value="Adiciona testes de exemplo para a classe Movimentacao." />
     <option name="LAST_COMMIT_MESSAGE" value="Adiciona testes de exemplo para a classe Movimentacao." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sistema_bancario$All_in_sistema_bancario.ic" NAME="All in sistema-bancario Coverage Results" MODIFIED="1623618878674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
