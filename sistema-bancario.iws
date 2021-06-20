@@ -82,19 +82,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ContaTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in sistema-bancario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistema-bancario" />
       <option name="PACKAGE_NAME" value="" />
@@ -196,6 +183,8 @@
       <workItem from="1622061224775" duration="7040000" />
       <workItem from="1622145789777" duration="396000" />
       <workItem from="1623612020879" duration="7009000" />
+      <workItem from="1624221556214" duration="601000" />
+      <workItem from="1624224690090" duration="686000" />
     </task>
     <task id="LOCAL-00001" summary="Adiciona testes de exemplo para a classe Movimentacao.">
       <created>1598458565400</created>

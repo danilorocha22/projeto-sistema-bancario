@@ -128,6 +128,7 @@ public class Conta implements Cadastro {
      */
     public void saque(final double valor) {
         // TODO: Você precisa implementar este método
+        if(valor <= 0) throw new IllegalArgumentException("Valor para saque deve ser maior que zero!");
         Movimentacao movimentacao = new Movimentacao(this);
         movimentacao.setConfirmada(true);
         movimentacao.setTipo('D');

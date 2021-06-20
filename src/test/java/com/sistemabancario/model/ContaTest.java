@@ -103,18 +103,6 @@ public class ContaTest {
         final char obtido = m.getTipo();
         assertEquals(esperado, obtido);
     }
-    
-    @Test
-    void depositoDinheiroTipoMovimentacaoDebito() {
-        final Conta instance = new Conta();
-        instance.depositoDinheiro(400);
-        instance.saque(100);
-        final List <Movimentacao> movimentacaoList = instance.getMovimentacoes();
-        final Movimentacao m = movimentacaoList.get(1);
-        final char esperado = 'D';
-        final char obtido = m.getTipo();
-        assertEquals(esperado, obtido);
-    }
 
     @Test
     void depositoDinheiroMovimentacaoConfirmada() {
