@@ -128,6 +128,12 @@ public class Conta implements Cadastro {
      */
     public void saque(final double valor) {
         // TODO: Você precisa implementar este método
+        Movimentacao movimentacao = new Movimentacao(this);
+        movimentacao.setConfirmada(true);
+        movimentacao.setTipo('D');
+        movimentacao.setValor(valor);
+        saldo -= valor;
+        movimentacoes.add(movimentacao);
     }
 
     /**
@@ -140,6 +146,7 @@ public class Conta implements Cadastro {
      */
     public void depositoDinheiro(final double valor) {
         // TODO: Você precisa implementar este método
+        if(valor <= 0) throw new IllegalArgumentException("Valor para depósito deve ser maior que zero!");
         Movimentacao movimentacao = new Movimentacao(this);
         movimentacao.setConfirmada(true);
         movimentacao.setTipo('C');
