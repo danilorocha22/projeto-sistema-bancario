@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a6aea60-9913-4a93-8ea4-50a51ecd1ca5" name="Default Changelist" comment="Adiciona testes de exemplo para a classe Movimentacao.">
       <change beforePath="$PROJECT_DIR$/sistema-bancario.iws" beforeDir="false" afterPath="$PROJECT_DIR$/sistema-bancario.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sistemabancario/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sistemabancario/model/Conta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/sistemabancario/model/ContaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sistemabancario/model/ContaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,31 +80,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContaTest">
-    <configuration name="All in sistema-bancario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistema-bancario" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistema-bancario" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sistemabancario.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
-      <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
+  <component name="RunManager" selected="JUnit.ContaTest.saqueDinheiroValorNegativo">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaTest.depositoDinheiroMovimentacaoConfirmada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaTest.depositoDinheiroMovimentacaoAdicionada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistema-bancario" />
       <extension name="coverage">
         <pattern>
@@ -115,13 +102,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
       <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
-      <option name="METHOD_NAME" value="depositoDinheiroMovimentacaoConfirmada" />
+      <option name="METHOD_NAME" value="depositoDinheiroMovimentacaoAdicionada" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaTest.depositoDinheiroValorAtribuido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaTest.depositoDinheiroValorAtribuidoMovimentacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistema-bancario" />
       <extension name="coverage">
         <pattern>
@@ -131,13 +118,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
       <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
-      <option name="METHOD_NAME" value="depositoDinheiroValorAtribuido" />
+      <option name="METHOD_NAME" value="depositoDinheiroValorAtribuidoMovimentacao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaTest.depsitoDinheiroTipoMovimentacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaTest.saqueDinheiroMovimentacaoAdicionada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistema-bancario" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +134,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
       <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
-      <option name="METHOD_NAME" value="depsitoDinheiroTipoMovimentacao" />
+      <option name="METHOD_NAME" value="saqueDinheiroMovimentacaoAdicionada" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContaTest.saqueDinheiroValorAtribuidoMovimentacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistema-bancario" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sistemabancario.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
+      <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
+      <option name="METHOD_NAME" value="saqueDinheiroValorAtribuidoMovimentacao" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContaTest.saqueDinheiroValorNegativo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistema-bancario" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sistemabancario.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sistemabancario.model" />
+      <option name="MAIN_CLASS_NAME" value="com.sistemabancario.model.ContaTest" />
+      <option name="METHOD_NAME" value="saqueDinheiroValorNegativo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContaTest" />
-        <item itemvalue="JUnit.All in sistema-bancario" />
-        <item itemvalue="JUnit.ContaTest.depositoDinheiroValorAtribuido" />
-        <item itemvalue="JUnit.ContaTest.depositoDinheiroMovimentacaoConfirmada" />
-        <item itemvalue="JUnit.ContaTest.depsitoDinheiroTipoMovimentacao" />
+        <item itemvalue="JUnit.ContaTest.saqueDinheiroValorNegativo" />
+        <item itemvalue="JUnit.ContaTest.saqueDinheiroMovimentacaoAdicionada" />
+        <item itemvalue="JUnit.ContaTest.depositoDinheiroMovimentacaoAdicionada" />
+        <item itemvalue="JUnit.ContaTest.saqueDinheiroValorAtribuidoMovimentacao" />
+        <item itemvalue="JUnit.ContaTest.depositoDinheiroValorAtribuidoMovimentacao" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +203,9 @@
       <workItem from="1622145789777" duration="396000" />
       <workItem from="1623612020879" duration="7009000" />
       <workItem from="1624221556214" duration="601000" />
-      <workItem from="1624224690090" duration="686000" />
+      <workItem from="1624224690090" duration="1959000" />
+      <workItem from="1624229612633" duration="29000" />
+      <workItem from="1624271291545" duration="2565000" />
     </task>
     <task id="LOCAL-00001" summary="Adiciona testes de exemplo para a classe Movimentacao.">
       <created>1598458565400</created>

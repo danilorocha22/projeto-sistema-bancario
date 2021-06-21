@@ -90,6 +90,7 @@ public class ContaTest {
         instance.setLimite(limite);
         instance.depositoDinheiro(deposito);
         final double obtido = instance.getSaldoTotal();
+        System.out.println(obtido);
         assertEquals(esperado, obtido, 0.001);
     }
 
@@ -117,20 +118,89 @@ public class ContaTest {
 
     @Test
     void depositoDinheiroValorAtribuidoMovimentacao() {
+        final double deposito = 400;
         final Conta instance = new Conta();
-        instance.depositoDinheiro(400);
+        instance.depositoDinheiro(deposito);
         final List<Movimentacao> movimentacaoList = instance.getMovimentacoes();
         final Movimentacao m = movimentacaoList.get(0);
-        final double esperado = 400;
+        final double esperado = deposito;
         final double obtido = m.getValor();
-        assertEquals(esperado, obtido, 0.001);
+        assertEquals(esperado, obtido);
     }
 
     @Test
     void depositoDinheiroMovimentacaoAdicionada() {
+        final double deposito = 200;
         final Conta instance = new Conta();
-        instance.depositoDinheiro(200);
-        instance.depositoDinheiro(200);
+        instance.depositoDinheiro(deposito);
+        instance.depositoDinheiro(deposito);
+        final List<Movimentacao> movimentacaoList = instance.getMovimentacoes();
+        final int obtido = movimentacaoList.size();
+        final int esperado = 2;
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void depositoDinheiroValorNegativo(){
+        final Conta instance = new Conta();
+        assertThrows(IllegalArgumentException.class,()-> instance.depositoDinheiro(-400));
+    }
+
+    @Test
+    void saqueDinheiro() {
+        final double limite = 500.7, deposito = 500.8, saque = 300.07, esperado = 701.43;
+        final Conta instance = new Conta();
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        instance.depositoDinheiro(deposito);
+        instance.saque(saque);
+        final double obtido = instance.getSaldoTotal();
+        assertEquals(esperado, obtido, 0.001);
+    }
+
+    @Test
+    void saqueDinheiroTipoMovimentacaoDebito() {
+        final Conta instance = new Conta();
+        instance.depositoDinheiro(400);
+        instance.saque(100);
+        final List <Movimentacao> movimentacaoList = instance.getMovimentacoes();
+        final Movimentacao m = movimentacaoList.get(1);
+        final char esperado = 'D';
+        final char obtido = m.getTipo();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void saqueDinheiroMovimentacaoConfirmada() {
+        final Conta instance = new Conta();
+        instance.depositoDinheiro(400);
+        instance.saque(100);
+        final List<Movimentacao> movimentacaoList = instance.getMovimentacoes();
+        final Movimentacao m = movimentacaoList.get(1);
+        final boolean esperado = true;
+        final boolean obtido = m.isConfirmada();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void saqueDinheiroValorAtribuidoMovimentacao() {
+        final double deposito = 400, saque = 100;
+        final Conta instance = new Conta();
+        instance.depositoDinheiro(deposito);
+        instance.saque(saque);
+        final List<Movimentacao> movimentacaoList = instance.getMovimentacoes();
+        final Movimentacao m = movimentacaoList.get(1);
+        final double esperado = saque;
+        final double obtido = m.getValor();
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void saqueDinheiroMovimentacaoAdicionada() {
+        final double deposito = 200, saque = 300;
+        final Conta instance = new Conta();
+        instance.depositoDinheiro(deposito);
+        instance.depositoDinheiro(deposito);
         instance.saque(300);
         final List<Movimentacao> movimentacaoList = instance.getMovimentacoes();
         final int obtido = movimentacaoList.size();
@@ -139,9 +209,9 @@ public class ContaTest {
     }
 
     @Test
-    void depositoDinheiroValorNegativo(){
-        final Conta conta = new Conta();
-        assertThrows(IllegalArgumentException.class,()-> conta.depositoDinheiro(-400));
+    void saqueDinheiroValorNegativo(){
+        final Conta instance = new Conta();
+        assertThrows(IllegalArgumentException.class,()-> instance.saque(-400));
     }
 
 }
